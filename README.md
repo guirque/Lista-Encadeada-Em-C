@@ -18,7 +18,7 @@ Adiciona um novo elemento ao início da lista encadeada. Seu primeiro parâmetro
 <hr/>
 
 <li><i><code>lerase</code></i> (llist** aList, int index)</code></li>
-Apaga um elemento da lista (e da memória), cujo endereço deve ser passado como argumento, numa posição <i>index</i>.
+Apaga um elemento da lista (e da memória) numa posição <i>index</i>. O endereço dessa lista deve ser passado como argumento.
 <hr/>
 
 <li><i><code>lget</code></i> (llist* aList, int index)</code></li>
