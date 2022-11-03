@@ -22,6 +22,60 @@ void laddToStart(llist** aList, int add)
     *aList = newElement; //Ponteiro apontado por aList (inicio da cadeia) comeca a apontar para esse novo elemento
 }
 
+//Insere elemento na posicao da lista  indicada
+void linsert(llist** aList, int index, int add)
+{
+    //Criando elemento da lista. newElement e um ponteiro para esse elemento
+    llist* newElement = 
+    (llist*) malloc(sizeof(llist));
+    
+    //Modificando informacao do elemento
+    newElement->value = add;
+    
+    //Elementos analisados durante busca
+    llist* before = NULL;
+    llist* current = *aList;
+    
+    for(int i = 0; i <= index; i++)
+    {
+        //Encontrado
+        if(i == index)
+        {
+            newElement->next = current; //O novo elemento passa a apontar para o que esta no indice
+            
+            //O anterior passa a apontar para o novo elemento
+            if(index != 0) before->next = newElement; //Mudando o ponteiro do anterior para o posterior
+            else *aList = newElement; //Caso o elemento seja o primeiro da lista, mudamos a quem aponta o ponteiro inicial
+        }
+        //Nao Encontrado
+        else
+        {
+            before = current;
+            current = current->next;
+        }
+    }
+}
+
+//troca o valor do elemento na posicao da lista indicada
+void lchange(llist** aList, int index, int change)
+{
+    //Elementos analisados durante busca
+    llist* current = *aList;
+    for(int i = 0; i <= index; i++)
+    {
+        //Encontrado
+        if(i == index)
+        {
+            current->value = change;
+        }
+        //Nao Encontrado
+        else
+        {
+            current = current->next;
+        }
+    }
+}
+
 //Apaga um elemento numa posicao da lista
 void lerase(llist** aList, int index)
 {
@@ -112,6 +166,16 @@ int main()
     
     //Imprimindo apos apagar elementos
     printf("\n");
+    lprint(umaLista);
+    
+    //Adicionando elementos, e imprimindo lista
+    printf("\n");
+    linsert(&umaLista, 2, 76);
+    lprint(umaLista);
+    
+    //Modificando elemento e imprimindo lista
+    printf("\n");
+    lchange(&umaLista, 2, 100);
     lprint(umaLista);
     
     //Retornando um elemento a partir de um indice
