@@ -9,7 +9,7 @@ Referida, por meio de <code>typedef</code>, como <code>llist</code> (abreviaçã
 
 <h2>Funções</h2>
 <ul>
-<li><i><code>lcreate</code>(int add)</i></li>
+<li><i><code>lcreate</code></i>(int add)</li>
 Retorna um ponteiro para o primeiro elemento de uma nova lista encadeada. O primeiro elemento terá seu valor igual àquele passado como argumento. Novas listas podem ser criadas com <code>llist* nome = lcreate(valor);</code> 
 <hr/>
 
@@ -17,8 +17,16 @@ Retorna um ponteiro para o primeiro elemento de uma nova lista encadeada. O prim
 Adiciona um novo elemento ao início da lista encadeada. Seu primeiro parâmetro é o endereço do ponteiro usado para se referir à estrutura, enquanto o segundo é o inteiro que deve ser armazenado como elemento da lista. 
 <hr/>
 
+<li><i><code>linsert</code></i> (llist** aList, int index, int add)</code></li>
+Insere um elemento de valor <i>add</i> na lista na posição indicada. 
+<hr/>
+
 <li><i><code>lerase</code></i> (llist** aList, int index)</code></li>
 Apaga um elemento da lista (e da memória) numa posição <i>index</i>. O endereço dessa lista deve ser passado como argumento.
+<hr/>
+
+<li><i><code>lchange</code></i> (llist** aList, int index, int change)</code></li>
+Altera o valor do elemento na posição <i>index</i> para <i>change</i>.
 <hr/>
 
 <li><i><code>lget</code></i> (llist* aList, int index)</code></li>
