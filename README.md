@@ -30,6 +30,6 @@ Dado o ponteiro que aponta para o início da lista, imprime seu conteúdo no for
 <hr/>
 
 <li><i><code>lfind</code></i> (llist* aList, int value)</code></li>
-Retorna o índice (a posição) do primeiro elemento de valor <i>value</i> na lista.
+Retorna o índice (a posição) do primeiro elemento de valor <i>value</i> na lista. Caso ele não exista, retorna -1.
 
 </ul>
