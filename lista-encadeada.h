@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//Definicao
+//Struct que representa um elemento de uma lista.
 typedef struct linked_list
 {
     int value;
     struct linked_list* next;
 } llist;
 
-//Insere elemento na primeira posicao da lista
+//Insere elemento na primeira posicao de uma lista.
 void laddToStart(llist** aList, int add)
 {
     //Criando elemento da lista. newElement e um ponteiro para esse elemento
@@ -22,7 +22,7 @@ void laddToStart(llist** aList, int add)
     *aList = newElement; //Ponteiro apontado por aList (inicio da cadeia) comeca a apontar para esse novo elemento
 }
 
-//Insere elemento na posicao da lista  indicada
+//Insere elemento na posicao da lista indicada.
 void linsert(llist** aList, int index, int add)
 {
     //Criando elemento da lista. newElement e um ponteiro para esse elemento
@@ -56,7 +56,7 @@ void linsert(llist** aList, int index, int add)
     }
 }
 
-//troca o valor do elemento na posicao da lista indicada
+//Troca o valor do elemento na posicao da lista indicada.
 void lchange(llist** aList, int index, int change)
 {
     //Elementos analisados durante busca
@@ -100,7 +100,7 @@ void lerase(llist** aList, int index)
 
 }
 
-//Cria uma lista com elemento inicial de valor especificado
+//Cria uma lista com elemento inicial de valor especificado.
 llist* lcreate(int add)
 {
     //Cria o ponteiro para o primeiro elemento da lista encadeada
@@ -110,7 +110,7 @@ llist* lcreate(int add)
     return l;
 }
 
-//Retorna o valor do elemento na posicao index
+//Retorna o valor de um elemento numa lista na posicao index.
 int lget(llist* aList, int index)
 {
     for(int i = 0; i <= index; i++)
@@ -120,7 +120,7 @@ int lget(llist* aList, int index)
     }
 }
 
-//Retorna o indice do primeiro elemento de valor value. -1 caso nao exista.
+//Retorna o indice do primeiro elemento de valor value. Retorna -1 caso nao exista.
 int lfind(llist* aList, int value)
 {
     for(int i = 0; aList != NULL; i++)
@@ -131,7 +131,7 @@ int lfind(llist* aList, int value)
     return -1;
 }
 
-//Imprime a lista
+//Imprime uma lista.
 void lprint(llist* aList)
 {
     printf("{");
@@ -144,45 +144,4 @@ void lprint(llist* aList)
         aList = aList->next;
     }
     printf("}");
-}
-
-int main()
-{
-    llist* umaLista; //Criando o ponteiro da lista
-    umaLista = lcreate(15); //Criando a lista em si
-    
-    //Adicionando elementos
-    laddToStart(&umaLista, 10);
-    laddToStart(&umaLista, 255);
-    laddToStart(&umaLista, 87);
-    laddToStart(&umaLista, 255);
-    
-    //Imprimindo a lista
-    lprint(umaLista);
-    
-    //Apagando elementos da lista
-    lerase(&umaLista, 0);
-    lerase(&umaLista, 2);
-    
-    //Imprimindo apos apagar elementos
-    printf("\n");
-    lprint(umaLista);
-    
-    //Adicionando elementos, e imprimindo lista
-    printf("\n");
-    linsert(&umaLista, 2, 76);
-    lprint(umaLista);
-    
-    //Modificando elemento e imprimindo lista
-    printf("\n");
-    lchange(&umaLista, 2, 100);
-    lprint(umaLista);
-    
-    //Retornando um elemento a partir de um indice
-    printf("\nResultado de lget: %d", lget(umaLista, 1));
-    
-    //Encontrando o indice do primeiro elemento com valor 255
-    printf("\nIndice do primeiro elemento com valor 255: %d\n", lfind(umaLista, 255));
-    
-    return 0;
 }
