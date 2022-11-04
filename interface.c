@@ -25,8 +25,9 @@ int main()
 
     //Apagando elementos da lista
     lerase(&umaLista, 0);
+    printf("-> Elemento na posicao 0 foi apagado.\n");
     lerase(&umaLista, 2);
-    printf("-> Elementos na posicao 0 e 2 foram apagados.\n");
+    printf("-> Elemento na posicao 2 foi apagado.\n");
 
     //Imprimindo apos apagar elementos
     printf("-> Impressao: ");
