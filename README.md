@@ -30,11 +30,11 @@ Altera o valor do elemento na posição <i>index</i> para <i>change</i>.
 <hr/>
 
 <li><i><code>lget</code></i> (llist* aList, int index)</code></li>
-Por meio de uma busca linear, retorna o inteiro guardado na posição de índice <i>index</i> (segundo parâmetro) na lista. O primeiro parâmetro é o ponteiro referente ao início da lista. 
+Por meio de uma busca linear, retorna o inteiro guardado na posição de índice <i>index</i> (segundo parâmetro) na lista. O primeiro parâmetro é o ponteiro referente ao início da lista. Retorna NULL caso o elemento não exista.
 <hr/>
 
 <li><i><code>lgetPointer</code></i> (llist* aList, int index)</code></li>
-Retorna um ponteiro para o elemento na posição de índice <i>index</i> numa lista. Pode ser interessante para lidar com algum elemento a qualquer momento, mesmo após mudança de posição dentro da lista ou de valor. Isso porque o ponteiro retornado apontará para ele independentemente, com exceção nos casos em que o elemento foi apagado. Também pode ser usado como ponto de partida para a leitura de elementos posteriores na lista.
+Retorna um ponteiro para o elemento na posição de índice <i>index</i> numa lista. Pode ser interessante para lidar com algum elemento a qualquer momento, mesmo após mudança de posição dentro da lista ou de valor. Isso porque o ponteiro retornado apontará para ele independentemente, com exceção nos casos em que o elemento foi apagado. Também pode ser usado como ponto de partida para a leitura de elementos posteriores na lista. Retorna NULL caso o elemento não exista.
 <hr/>
 
 <li><i><code>lprint</code></i> (llist* aList)</code></li>
@@ -46,6 +46,6 @@ Retorna o índice (a posição) do primeiro elemento de valor <i>value</i> na li
 <hr/>
 
 <li><i><code>lfindPointer</code></i> (llist* aList, int value)</code></li>
-Retorna um ponteiro para o primeiro elemento de valor <i>value</i> na lista. Caso ele não exista, retorna um ponteiro NULL. Pode ser interessante para possibilitar a modificação do valor do elemento de forma direta, ou então para ler/modificar elementos posteriores a ele, sem a necessidade do uso de outras funções. Sua funcionalidade se assemelha à de lgetPointer.
+Retorna um ponteiro para o primeiro elemento de valor <i>value</i> na lista. Caso ele não exista, retorna um ponteiro NULL. Pode ser interessante para possibilitar a modificação do valor do elemento de forma direta, ou então para ler/modificar elementos posteriores a ele, sem a necessidade do uso de outras funções. Sua funcionalidade se assemelha à de <code>lgetPointer</code>.
 
 </ul>
