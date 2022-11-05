@@ -30,7 +30,7 @@ Altera o valor do elemento na posição <i>index</i> para <i>change</i>.
 <hr/>
 
 <li><i><code>lget</code></i> (llist* aList, int index)</code></li>
-Por meio de uma busca linear, retorna o inteiro guardado na posição de índice <i>index</i> (segundo parâmetro) na lista. O primeiro parâmetro é o ponteiro referente ao início da lista. Retorna NULL caso o elemento não exista.
+Por meio de uma busca linear, retorna o inteiro guardado na posição de índice <i>index</i> (segundo parâmetro) na lista. O primeiro parâmetro é o ponteiro referente ao início da lista.
 <hr/>
 
 <li><i><code>lgetPointer</code></i> (llist* aList, int index)</code></li>
