@@ -4,7 +4,9 @@
 //Struct que representa um elemento de uma lista.
 typedef struct linked_list
 {
+    //Valor do elemento.
     int value;
+    //Ponteiro para o proximo elemento na lista.
     struct linked_list* next;
 } llist;
 
@@ -120,6 +122,16 @@ int lget(llist* aList, int index)
     }
 }
 
+//Retorna o ponteiro para um elemento numa lista com posicao index.
+llist* lgetPointer(llist* aList, int index)
+{
+    for (int i = 0; i <= index; i++)
+    {
+        if (i == index) return aList;
+        else aList = aList->next;
+    }
+}
+
 //Retorna o indice do primeiro elemento de valor value. Retorna -1 caso nao exista.
 int lfind(llist* aList, int value)
 {
@@ -129,6 +141,17 @@ int lfind(llist* aList, int value)
         else aList = aList->next;
     }
     return -1;
+}
+
+//Retorna o ponteiro do primeiro elemento de valor value. Retorna NULL caso nao exista.
+llist* lfindPointer(llist* aList, int value)
+{
+    for (int i = 0; aList != NULL; i++)
+    {
+        if (aList->value == value) return aList;
+        else aList = aList->next;
+    }
+    return NULL;
 }
 
 //Imprime uma lista.
