@@ -112,7 +112,7 @@ llist* lcreate(int add)
     return l;
 }
 
-//Retorna o valor de um elemento numa lista na posicao index. Caso nao exista, retorna NULL.
+//Retorna o valor de um elemento numa lista na posicao index.
 int lget(llist* aList, int index)
 {
     for(int i = 0; i <= index; i++)
@@ -120,7 +120,6 @@ int lget(llist* aList, int index)
         if(i == index) return aList->value;
         else aList = aList->next;
     }
-    return NULL;
 }
 
 //Retorna o ponteiro para um elemento numa lista com posicao index. Caso o elemento nao exista, retorna NULL.
