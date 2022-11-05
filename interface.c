@@ -29,6 +29,7 @@ int main()
     lerase(&umaLista, 2);
     printf("-> Elemento na posicao 2 foi apagado.\n");
 
+
     //Imprimindo apos apagar elementos
     printf("-> Impressao: ");
     lprint(umaLista);
@@ -50,10 +51,14 @@ int main()
 
     //Retornando um elemento a partir de um indice
     printf("-> Resultado de lget na posicao 1: %d\n", lget(umaLista, 1));
+    printf("-> Resultado de value com lgetPointer na posicao 1: %d\n", lgetPointer(umaLista, 1)->value);
 
     //Encontrando o indice do primeiro elemento com valor 255
     printf("-> Indice do primeiro elemento com valor 255: %d\n", lfind(umaLista, 255));
     
+    //Elemento que vem logo apos o primeiro elemento de valor 255
+    printf("-> Elemento que vem logo apos o primeiro elemento de valor 255 (com lfindPointer): %d\n", lfindPointer(umaLista, 255)->next->value);
+
     //Para nao fechar o programa sem dar tempo de leitura para o usuario
     int espera;
     scanf("%d", &espera);
