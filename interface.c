@@ -17,7 +17,6 @@ int main()
     laddToStart(&umaLista, 255);
     printf("-> Elementos adicionados: 10, 255, 87, 255.\n");
 
-
     //Imprimindo a lista
     printf("-> Impressao: ");
     lprint(umaLista);
@@ -28,7 +27,6 @@ int main()
     printf("-> Elemento na posicao 0 foi apagado.\n");
     lerase(&umaLista, 2);
     printf("-> Elemento na posicao 2 foi apagado.\n");
-
 
     //Imprimindo apos apagar elementos
     printf("-> Impressao: ");
@@ -42,12 +40,20 @@ int main()
     lprint(umaLista);
     printf("\n");
 
+    //Guardando ponteiro do elemento na posicao 2
+    llist* x = lgetPointer(umaLista, 2);
+    printf("-> Elemento na posicao 2 guardado como x (com lgetPointer).\n");
+    printf("-> Valor de x: %d\n", x->value);
+
     //Modificando elemento e imprimindo lista
     lchange(&umaLista, 2, 100);
     printf("-> Alterado o valor do elemento na posicao 2 para 100.\n");
     printf("-> Impressao: ");
     lprint(umaLista);
     printf("\n");
+
+    //Reanalisando o valor de x apos modificacao.
+    printf("-> Valor de x: %d\n", x->value);
 
     //Retornando um elemento a partir de um indice
     printf("-> Resultado de lget na posicao 1: %d\n", lget(umaLista, 1));
